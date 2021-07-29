@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/9b945d1131.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: oswald;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url("pexels-johannes-plenio-2080960 - Copy.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .controler {
+    width: 353px;
+    background: #138de817;
+    padding: 12px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 20px #1b63828f, -5px -5px 20px #de92802e;
+}
+
+.controler h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+
+span.s {
+    font-size: 11px;
+    float: left;
+    margin-top: -23px;
+    margin-left: 35px;
+    display: flex;
+    color: red;
+    font-family: sans-serif;
+}
+.in {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 25px;
+    border: 1px solid;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.in input {
+    width: 85%;
+    padding: 6px;
+    background: none;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    font-weight: 500;
+}
+button#btn {
+    padding: 5px 22px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    background: none;
+    outline: none;
+    border: 1px solid;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+button#btn:hover {
+    transform: translateY(-5px);
+    background: #182446a1;
+    border: 1px solid #e2907f69;
+    color: white;
+}
+.in:hover {
+    background: #1b517a75;
+    border: 1px solid #e2907f69;
+    width: 87%;
+}
+
+.in:hover i {
+    color: #e2907f;
+    transition:0.3s;
+    font-size: 20px ;
+}
+    </style>
+</head>
+<body>
+    <div id="main_wraper">
+        <div class="controler">
+            <h1>Login</h1>
+            <div id="e" class="in">
+                <i class="fas fa-envelope"></i> <input id="email" type="text"  placeholder="Email address" required>
+            </div>
+            <span id="eml" class="s"></span>
+            <div id="p" class="in">
+                <i class="fas fa-key"></i> <input id="password" type="password"  placeholder="Password">
+            </div>
+            <span id="pass" class="s"></span>
+            <button id="btn"> login </button>
+            
+        </div>
+
+
+    </div>
+<script>
+
+const imail = document.getElementById('email');
+const password = document.getElementById('password');
+const btn = document.getElementById('btn');
+const spanP = document.getElementById('pass');
+const spanE = document.getElementById('eml');
+const e_div = document.getElementById('e');
+const p_div = document.getElementById('p');
+btn.addEventListener('click',function(e){
+
+    if(imail.value=='' && password.value==''){
+        spanE.innerHTML = `<i class="fas fa-exclamation-triangle"> Enter email address!</i>`;
+        spanP.innerHTML = `<i class="fas fa-exclamation-triangle"> Enter password!</i>`;
+    }else if(imail.value && password.value == ''){
+        spanE.innerHTML = "";
+        spanP.innerHTML = `<i class="fas fa-exclamation-triangle"> Enter password!</i>`;
+    }else if(password.value.length <= 8){
+        spanP.innerHTML = `<i class="fas fa-exclamation-triangle"> Enter password minimum eight degite!</i>`;
+    }else if(imail.value && password.value.length > 8){
+        spanP.innerHTML = "";
+        window.open('file:///E:/Islam/islam.html');
+    }
+
+e.preventDefault();
+})
+
+
+</script>
+</body>
+</html>
